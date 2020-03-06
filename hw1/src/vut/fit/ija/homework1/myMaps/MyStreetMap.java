@@ -7,10 +7,6 @@ import java.util.List;
 
 public class MyStreetMap implements StreetMap {
     private List<Street> streets;
-    /**
-     * Přidá ulici do mapy.
-     * @param s Objekt reprezentující ulici.
-     */
 
     public MyStreetMap(){
         this.streets = new ArrayList<>();
@@ -20,12 +16,27 @@ public class MyStreetMap implements StreetMap {
         this.streets.add(s);
     }
 
-    /**
-     * Vrátí objekt reprezentující ulici se zadaným id.
-     * @param id Identifikátor ulice.
-     * @return Nalezenou ulici. Pokud ulice s daným identifikátorem není součástí mapy, vrací null.
-     */
     public Street getStreet(String id){
-        return  null;
+        for(int i = 0; i < this.streets.size(); i++){
+            if (this.streets.get(i).getId() == id) {
+                return this.streets.get(i);
+            }
+        }
+        return  null; // If there is no street with given ID
+    }
+
+    public String toString(){
+        String delim = "-";
+
+        StringBuilder sb = new StringBuilder();
+
+        int i = 0;
+        while (i < this.streets.size() - 1) {
+            sb.append(this.streets.get(i).getId());
+            sb.append(delim);
+            i++;
+        }
+        sb.append(this.streets.get(i).getId());
+        return sb.toString();
     }
 }
