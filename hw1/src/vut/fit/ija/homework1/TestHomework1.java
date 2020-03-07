@@ -67,12 +67,12 @@ public class TestHomework1 {
         System.out.println(str2.toString());
         assert s1.getStreet().equals(str1) : "Zastavka s1 je umistena na ulici str1";
 
-       StreetMap sm = new MyStreetMap();
-       sm.addStreet(str1);
-       sm.addStreet(str2);
-       sm.addStreet(str3);
-       System.out.println(sm.toString());
-       
+        StreetMap sm = new MyStreetMap();
+        sm.addStreet(str1);
+        sm.addStreet(str2);
+        sm.addStreet(str3);
+        System.out.println(sm.toString());
+        
         assert sm.getStreet("str2").equals(str2)
                 : "Test spravne vlozene ulice str2";
         assert sm.getStreet("str1").getStops().equals(Arrays.asList(new Stop[] {new MyStop("s1")}))
