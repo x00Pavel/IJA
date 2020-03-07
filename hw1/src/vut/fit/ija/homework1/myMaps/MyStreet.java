@@ -9,14 +9,16 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MyStreet implements Street {
+    
     private String street_name;
-    private MyCoordinate point_1, point_2;
+    private List<Coordinate> cords;
     private List<Stop> street_stops = null;
 
-    public MyStreet(String name, MyCoordinate point_1, MyCoordinate point_2) {
+    public MyStreet(String name, Coordinate point_1, Coordinate point_2) {
         this.street_name = name;
-        this.point_1 = point_1;
-        this.point_2 = point_2;
+        this.cords = new ArrayList<>();
+        cords.add(point_1);
+        cords.add(point_2);
         this.street_stops = new ArrayList<>();
     }
 
@@ -25,7 +27,7 @@ public class MyStreet implements Street {
     }
 
     public List<Coordinate> getCoordinates() {
-        return null;
+        return this.cords;
     }
 
     /**
@@ -49,7 +51,7 @@ public class MyStreet implements Street {
     }
 
     public String toString() {
-        String str = "{\n\t" + this.street_name + " - (" + this.point_1.toString() + " " + this.point_2.toString()
+        String str = "{\n\t" + this.street_name + " - (" + this.cords.toString() + " " + this.cords.toString()
                 + ")\n";
         if (this.street_stops != null) {
             String tmp = "\tStops: " + this.street_stops.toString() + "\n}\n";
@@ -61,5 +63,4 @@ public class MyStreet implements Street {
         }
 
     }
-
 }
