@@ -12,6 +12,15 @@ public class MyCoordinate implements Coordinate {
         this.y_cord = y;
     }
 
+    @Override
+    public boolean equals(Object o){
+        if(o instanceof Coordinate){
+            Coordinate cord = (Coordinate)o;
+            return this.y_cord == cord.getY() && this.x_cord == cord.getX();
+        }
+        return false;
+    }
+
     public static MyCoordinate create(int x, int y){
         if(x < 0 || y < 0){
             System.out.print("Some of parameters are less then 0");

@@ -1,5 +1,6 @@
 package vut.fit.ija.homework1.myMaps;
 
+
 import vut.fit.ija.homework1.Maps.Coordinate;
 import vut.fit.ija.homework1.Maps.Stop;
 import vut.fit.ija.homework1.Maps.Street;
@@ -22,6 +23,14 @@ public class MyStop implements Stop {
             System.out.println("Cord is null");
 
         }
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Stop) {
+            return this.stop_id.equals(((Stop)o).getId());
+        }
+        return false;
     }
 
     public String toString() {
