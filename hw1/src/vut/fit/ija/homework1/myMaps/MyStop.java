@@ -16,21 +16,29 @@ public class MyStop implements Stop {
         }
         
         try{
-            System.out.println(cord[0].toString());
             this.stop_cord = cord[0];
         }
         catch(Exception e){
-            System.out.println("Cord is null");
-
         }
     }
     
     @Override
     public boolean equals(Object o) {
         if (o instanceof Stop) {
-            return this.stop_id.equals(((Stop)o).getId());
+            Stop stop = (Stop)o;
+            if(this.hashCode() == stop.hashCode()){
+                return this.stop_id.equals(stop.getId());
+            }
         }
         return false;
+    }
+
+    @Override
+    public int hashCode(){
+        final int prime = 31;
+        int res = 1;
+        res = prime * res + stop_id.hashCode();
+        return res;
     }
 
     public String toString() {
@@ -56,7 +64,7 @@ public class MyStop implements Stop {
                 System.out.println("Cord is null");
             }
         }
-        return "FUCK";
+        return "Not Nice";
     }
 
     /**
@@ -84,9 +92,6 @@ public class MyStop implements Stop {
      * @param s Ulice, na které je zastávka umístěna.
      */
     public void setStreet(Street s) {
-        if (s == null) {
-            System.out.println("Street in setStreet is null");
-        }
         this.stop_street = s;
     }
 
