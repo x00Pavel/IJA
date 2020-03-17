@@ -9,10 +9,10 @@
 package vut.fit.ija.homework1;
 
 import java.util.Arrays;
-import vut.fit.ija.homework1.Maps.Coordinate;
-import vut.fit.ija.homework1.Maps.Stop;
-import vut.fit.ija.homework1.Maps.Street;
-import vut.fit.ija.homework1.Maps.StreetMap;
+import vut.fit.ija.homework1.maps.Coordinate;
+import vut.fit.ija.homework1.maps.Stop;
+import vut.fit.ija.homework1.maps.Street;
+import vut.fit.ija.homework1.maps.StreetMap;
 import vut.fit.ija.homework1.myMaps.MyCoordinate;
 import vut.fit.ija.homework1.myMaps.MyStop;
 import vut.fit.ija.homework1.myMaps.MyStreet;
@@ -47,31 +47,31 @@ public class TestHomework1 {
         Street str2 = new MyStreet("str2", MyCoordinate.create(10, 100), MyCoordinate.create(50, 150));
         Street str3 = new MyStreet("str3", MyCoordinate.create(10, 100), MyCoordinate.create(50, 50));
 
-        System.out.println(str1.toString());
-        System.out.println(str2.toString());
-        System.out.println(str3.toString());
+        //System.out.println(str1.toString());
+        //System.out.println(str2.toString());
+        //System.out.println(str3.toString());
         Coordinate c1 = MyCoordinate.create(10,60);
-        System.out.println(c1.toString());
+        //System.out.println(c1.toString());
         assert c1 != null : "Lze vytvorit souradnice s kladnymi hodnotami";
 
         Stop s1 = new MyStop("s1", c1);
         Coordinate c2 = MyCoordinate.create(25,75);
         Stop s2 = new MyStop("s2", c2);
 
-        System.out.println(s1.toString());
-        System.out.println(s2.toString());
+        //System.out.println(s1.toString());
+        //System.out.println(s2.toString());
 
         str1.addStop(s1);
-        System.out.println(str1.toString());
+        //System.out.println(str1.toString());
         str2.addStop(s2);
-        System.out.println(str2.toString());
+        //System.out.println(str2.toString());
         assert s1.getStreet().equals(str1) : "Zastavka s1 je umistena na ulici str1";
 
         StreetMap sm = new MyStreetMap();
         sm.addStreet(str1);
         sm.addStreet(str2);
         sm.addStreet(str3);
-        System.out.println(sm.toString());
+        //System.out.println(sm.toString());
         
         assert sm.getStreet("str2").equals(str2)
                 : "Test spravne vlozene ulice str2";
