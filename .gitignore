@@ -1,0 +1,13 @@
+1_ukol/ija-ukol1.pdf
+1_ukol/doc/*
+hw1/Makefile
+hw1/.vscode/
+hw1/src/vut/fit/ija/homework1/TestHomework1.class
+hw1/src/vut/fit/ija/homework1/myMaps/MyCoordinate.class
+hw1/src/vut/fit/ija/homework1/myMaps/MyStop.class
+hw1/src/vut/fit/ija/homework1/myMaps/MyStreet.class
+hw1/src/vut/fit/ija/homework1/myMaps/MyStreetMap.class
+1_ukol/hw1/.idea/
+hw1/.idea/*
+1_ukol/hw1/out/production/hw1/vut/fit/ija/homework1/Maps/Coordinate.class
+*.class
