@@ -1,7 +1,7 @@
 package vut.fit.ija.homework1.myMaps;
 
-import vut.fit.ija.homework1.Maps.Street;
-import vut.fit.ija.homework1.Maps.StreetMap;
+import vut.fit.ija.homework1.maps.Street;
+import vut.fit.ija.homework1.maps.StreetMap;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,32 +1,36 @@
-package vut.fit.ija.homework1.myMaps;
+package ija.ija2019.homework2.maps;
 
+import ija.ija2019.homework2.interfaces.MyStop;
 
-import vut.fit.ija.homework1.maps.Coordinate;
-import vut.fit.ija.homework1.maps.Stop;
-import vut.fit.ija.homework1.maps.Street;
+import ija.ija2019.homework2.maps.Coordinate;
+import ija.ija2019.homework2.maps.Stop;
+import ija.ija2019.homework2.maps.Street;
 
-public class MyStop implements Stop {
+public class Stop implements MyStop{
     private String stop_id = "Empty";
     private Coordinate stop_cord = null;
     private Street stop_street = null;
 
-    public MyStop(String stop_name, Coordinate ... cord) {
-        if (stop_name != null) {
+    public Stop(String stop_name, Coordinate... cord) {
+        if (stop_name != null & !stop_name.isBlank()) {
             this.stop_id = stop_name;
         }
-        
-        try{
+
+        try {
             this.stop_cord = cord[0];
-        }
-        catch(Exception e){
+        } catch (Exception e) {
         }
     }
-    
+
+    public static Stop defaultStop(String id, Coordinate c){
+        return new Stop(id, c);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o instanceof Stop) {
-            Stop stop = (Stop)o;
-            if(this.hashCode() == stop.hashCode()){
+            Stop stop = (Stop) o;
+            if (this.hashCode() == stop.hashCode()) {
                 return this.stop_id.equals(stop.getId());
             }
         }
@@ -34,7 +38,7 @@ public class MyStop implements Stop {
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         final int prime = 31;
         int res = 1;
         res = prime * res + stop_id.hashCode();

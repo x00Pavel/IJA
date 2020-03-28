@@ -1,16 +1,15 @@
-package vut.fit.ija.homework1.myMaps;
+package ija.ija2019.homework2.maps;
 
-import vut.fit.ija.homework1.maps.Coordinate;
 
-public class MyCoordinate implements Coordinate {
+public class Coordinate{
+    
     private  int y_cord;
     private  int x_cord;
 
-
-    public MyCoordinate(int x, int y){
+    private Coordinate(int x, int y){
         this.x_cord = x;
         this.y_cord = y;
-   } 
+    }
 
     @Override
     public boolean equals(Object o){
@@ -31,14 +30,22 @@ public class MyCoordinate implements Coordinate {
         final int prime = 31;
         int res = 1;
         return  prime * res + this.x_cord + this.y_cord;
-         
+
     }
 
-    public static MyCoordinate create(int x, int y){
+    public int diffX(Coordinate c){
+        return (int) Math.abs(this.x_cord - c.getX());
+    }
+
+    public  int diffY(Coordinate c){
+        return (int) Math.abs(this.y_cord - c.getY());
+    }
+
+    public static Coordinate create(int x, int y){
         if(x < 0 || y < 0){
             return null;
         }
-        MyCoordinate cord = new MyCoordinate(x, y);
+        Coordinate cord = new Coordinate(x, y);
         return cord;
     }
 

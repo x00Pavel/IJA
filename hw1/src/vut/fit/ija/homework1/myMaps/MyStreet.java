@@ -1,8 +1,8 @@
 package vut.fit.ija.homework1.myMaps;
 
-import vut.fit.ija.homework1.Maps.Coordinate;
-import vut.fit.ija.homework1.Maps.Stop;
-import vut.fit.ija.homework1.Maps.Street;
+import vut.fit.ija.homework1.maps.Coordinate;
+import vut.fit.ija.homework1.maps.Stop;
+import vut.fit.ija.homework1.maps.Street;
 
 import java.util.ArrayList;
 import java.util.Arrays;
