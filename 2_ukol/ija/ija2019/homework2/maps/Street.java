@@ -1,13 +1,10 @@
 package ija.ija2019.homework2.maps;
 
-import ija.ija2019.homework2.maps.Stop;
-import ija.ija2019.homework2.maps.Coordinate;
-
-import ija.ija2019.homework2.interfaces.MyStreet;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import ija.ija2019.homework2.interfaces.MyStreet;
 
 public class Street implements MyStreet {
     private String street_name;
@@ -76,7 +73,6 @@ public class Street implements MyStreet {
                 Coordinate a = coordinates[i];
                 Coordinate b = coordinates[i + 1];
                 Coordinate c = coordinates[i + 2];
-                System.out.println(a);
 
                 int a_sqrt = (int) (Math.pow(a.diffX(b), 2) + Math.pow(a.diffY(b), 2));
                 int b_sqrt = (int) (Math.pow(b.diffX(c), 2) + Math.pow(b.diffY(c), 2));

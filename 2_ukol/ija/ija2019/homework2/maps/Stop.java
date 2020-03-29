@@ -2,10 +2,6 @@ package ija.ija2019.homework2.maps;
 
 import ija.ija2019.homework2.interfaces.MyStop;
 
-import ija.ija2019.homework2.maps.Coordinate;
-import ija.ija2019.homework2.maps.Stop;
-import ija.ija2019.homework2.maps.Street;
-
 public class Stop implements MyStop{
     private String stop_id = "Empty";
     private Coordinate stop_cord = null;
@@ -46,29 +42,31 @@ public class Stop implements MyStop{
     }
 
     public String toString() {
-        if (this.stop_id != null & this.stop_cord != null) {
-            String str = "{\n\tStop ID:" + this.stop_id + "\n\tCoordinates: " + this.stop_cord.toString() + "\n";
-            if (this.stop_street != null) {
-                String tmp = "\tStreet: there is some string }\n";
-                return str + tmp;
-            } else {
-                String tmp = "}\n";
-                return str + tmp;
-            }
+        String str = "stop(" + this.stop_id+")";
+        return str;
+        // if (this.stop_id != null & this.stop_cord != null) {
+        //     String str = "{\n\tStop ID:" + this.stop_id + "\n\tCoordinates: " + this.stop_cord.toString() + "\n";
+        //     // if (this.stop_street != null) {
+        //     //     String tmp = "\tStreet: there is some string }\n";
+        //     //     return str + tmp;
+        //     // } else {
+        //     //     String tmp = "}\n";
+        //     //     return str + tmp;
+        //     // }
 
-        } else {
-            if (this.stop_id != null) {
-                System.out.println("stop id is null");
-            }
-            if (this.stop_street != null) {
-                System.out.println("Stop street is null");
-            }
+        // } else {
+        //     if (this.stop_id != null) {
+        //         System.out.println("stop id is null");
+        //     }
+        //     if (this.stop_street != null) {
+        //         System.out.println("Stop street is null");
+        //     }
 
-            if (this.stop_cord != null) {
-                System.out.println("Cord is null");
-            }
-        }
-        return "Not Nice";
+        //     if (this.stop_cord != null) {
+        //         System.out.println("Cord is null");
+        //     }
+        // }
+        // return "Not Nice";
     }
 
     /**

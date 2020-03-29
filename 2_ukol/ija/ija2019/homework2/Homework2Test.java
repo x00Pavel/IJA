@@ -112,42 +112,42 @@ public class Homework2Test {
        c1 = Coordinate.create(80, 300);
        stop3 = Stop.defaultStop("stop3", c1);
        s3.addStop(stop3);
-//
+
        line1 = Line.defaultLine("10");
-    //    Assertions.assertTrue(line1.addStop(stop1), "Prvni vlozeni zastavky vzdy uspesne");
-    //    Assertions.assertFalse(line1.addStop(stop3), "Stop3 nelze vlozit - ulice nenavazuji");
-//        assertRoute(line1, "first:stop(stop1);");
-//        Assertions.assertTrue(line1.addStreet(s2), "Ulice second navazuje, bez zastavky");
-//        assertRoute(line1, "first:stop(stop1);second:null;");
-//        Assertions.assertTrue(line1.addStop(stop3), "Vlozeni stop3, ulice third navazuje");
-//        assertRoute(line1, "first:stop(stop1);second:null;third:stop(stop3);");
-//
-//        testImmutableRoute(line1);
+       Assertions.assertTrue(line1.addStop(stop1), "Prvni vlozeni zastavky vzdy uspesne");
+       Assertions.assertFalse(line1.addStop(stop3), "Stop3 nelze vlozit - ulice nenavazuji");
+       assertRoute(line1, "first:stop(stop1);");
+       Assertions.assertTrue(line1.addStreet(s2), "Ulice second navazuje, bez zastavky");
+       assertRoute(line1, "first:stop(stop1);second:null;");
+       Assertions.assertTrue(line1.addStop(stop3), "Vlozeni stop3, ulice third navazuje");
+       assertRoute(line1, "first:stop(stop1);second:null;third:stop(stop3);");
+
+       testImmutableRoute(line1);
    }
 //
 /* Oveřuje správnou sekvenci trasy linky. Záznamy jsou transformovány do řetězce podle níže uvedeného vzoru.
      * Pro street je využita metoda getId() - reprezentace pouze identifikátorem.
      * Pro zastávku je využita implicitní konverze na String - reprezentace řetězcem "stop(id)" nebo "null" (pokud zastávka není).
      */
-//   private void assertRoute(Line line, String expected) {
-//     String res = line.getRoute().stream()
-//         .map(entry -> entry.getKey().getId()
-//                 + ":"
-//                 + entry.getValue()
-//                 + ";")
-//         .collect(Collectors.joining());
-//     //System.out.println(res);
-//     Assertions.assertEquals(res, expected, "Reprezentace cesty linky.");
-// }
+  private void assertRoute(Line line, String expected) {
+    String res = line.getRoute().stream()
+        .map(entry -> entry.getKey().getId()
+                + ":"
+                + entry.getValue()
+                + ";")
+        .collect(Collectors.joining());
+    System.out.println(res);
+    Assertions.assertEquals(res, expected, "Reprezentace cesty linky.");
+}
 /* Test správného vytvoření defenzivní kopie / nemodifikovatelného seznamu v metodě Line.getRoute().
      * Pokud není vytvořená defenzivní kopie / nemodifikovatelný seznam, je možné trasu modifikovat zvenku, 
      * což je nežádoucí stav.
      * Podobně by mělo být i pro Street.getCoordinates() -- není v úkolu testováno.
      */
-//    private void testImmutableRoute(Line line) {
-//        try {
-//            line.getRoute().remove(0);
-//        } catch(UnsupportedOperationException ex) {}
-//        assertRoute(line, "first:stop(stop1);second:null;third:stop(stop3);");
-//    }
+   private void testImmutableRoute(Line line) {
+       try {
+           line.getRoute().remove(0);
+       } catch(UnsupportedOperationException ex) {}
+       assertRoute(line, "first:stop(stop1);second:null;third:stop(stop3);");
+   }
 }

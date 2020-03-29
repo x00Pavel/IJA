@@ -4,7 +4,6 @@
  */
 package ija.ija2019.homework2.interfaces;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import ija.ija2019.homework2.maps.Coordinate;
